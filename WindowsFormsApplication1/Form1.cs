@@ -28,9 +28,9 @@ namespace WindowsFormsApplication1
 
             HttpClient httpClient = new HttpClient();
             string getRequestURL = string.Format("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId={0}&key={1}", playlistId, API_KEY);
-            string response = httpClient.GetStringAsync(getRequestURL).ToString();
-
-            System.Diagnostics.Debug.Print(response.ToString());
+            Task<string> response = httpClient.GetStringAsync(getRequestURL);
+            
+            System.Diagnostics.Debug.Print(response.Result);
 
         }
 
