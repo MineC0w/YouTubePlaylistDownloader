@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
-
+using Newtonsoft.Json;
+using Google.YouTube;
+using Google.GData.YouTube;
 namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
@@ -27,10 +29,16 @@ namespace WindowsFormsApplication1
             var playlistId = "PL1oVHjBfBpwCuKJ0dynZyslyApZPwz9jr";
 
             HttpClient httpClient = new HttpClient();
-            string getRequestURL = string.Format("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId={0}&key={1}", playlistId, API_KEY);
+            string getRequestURL = string.Format("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId={0}&key={1}&maxResults=50", playlistId, API_KEY);
             Task<string> response = httpClient.GetStringAsync(getRequestURL);
+
             
-            System.Diagnostics.Debug.Print(response.Result);
+            Playlist testing = JsonConvert.DeserializeObject<Playlist>(response.Result);
+            foreach(Video video in testing.items)
+            {
+                listBox1.Items.Add(video.snippet.title);
+            }
+            MessageBox.Show(testing.ToString());
 
         }
 

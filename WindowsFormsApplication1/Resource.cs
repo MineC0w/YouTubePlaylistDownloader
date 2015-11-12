@@ -1,8 +1,8 @@
 ﻿namespace WindowsFormsApplication1
 {
-    class Resource
+    public class Resource
     {
-        string kind;
-        string videoId;
+        public string kind;
+        public string videoId;
     }
 }

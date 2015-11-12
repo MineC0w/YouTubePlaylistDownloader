@@ -8,7 +8,7 @@ namespace WindowsFormsApplication1
 {
     public class Playlist
     {
-        private Video[] items;
+        public Video[] items;
         
 
     }

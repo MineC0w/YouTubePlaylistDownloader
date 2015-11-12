@@ -9,15 +9,15 @@ namespace WindowsFormsApplication1
     public class Video
     {
 
-        string kind;
-        string id;
-        Snippet snipet;
-        string channelTitle;
-        string playlistId;
-        int position;
-        Resource resourceId;
-        VideoDetails contentDetails;
-        object status;
+        public string kind;
+        public string id;
+        public Snippet snippet;
+        public string channelTitle;
+        public string playlistId;
+        public int position;
+        public Resource resourceId;
+        public VideoDetails contentDetails;
+        public object status;
         //http://mrbool.com/how-to-create-a-youtube-downloader-using-c/32192
     }
 }

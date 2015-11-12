@@ -1,10 +1,10 @@
 ﻿namespace WindowsFormsApplication1
 {
-    internal class VideoDetails
+    public class VideoDetails
     {
-        string videoId;
-        string startAt;
-        string endAt;
-        string note;
+        public string videoId;
+        public string startAt;
+        public string endAt;
+        public string note;
     }
 }

@@ -1,12 +1,12 @@
 ﻿namespace WindowsFormsApplication1
 {
-    class Snippet
+    public class Snippet
     {
-        string publishedAt;
-        string channelId;
-        string title;
-        string description;
-        object thumbnails;
+        public string publishedAt;
+        public string channelId;
+        public string title;
+        public string description;
+        public object thumbnails;
 
 
         /*
